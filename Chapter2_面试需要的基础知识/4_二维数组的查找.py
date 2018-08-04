@@ -15,3 +15,4 @@ class Solution:
             elif array[a][b] < target:
                 a += 1
         return False
+        

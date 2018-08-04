@@ -4,3 +4,4 @@ class Solution:
         # write code here
         s = s.replace(' ', '%20')
         return s
+        
