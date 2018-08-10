@@ -8,7 +8,7 @@ class ListNode:
         self.next = y
         
     def getSubNode(self, index):
-        for i in range(index):
+        for _ in range(index):
             self = self.next
         return self
     
