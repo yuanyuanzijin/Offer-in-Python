@@ -7,7 +7,7 @@ class Solution:
         if exponent == 0:
             return 1
         result = 1
-        for i in range(abs(exponent)):
+        for _ in range(abs(exponent)):
             result = result * base
         if exponent < 0:
             result = 1 / result
