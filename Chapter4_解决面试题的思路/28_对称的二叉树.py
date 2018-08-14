@@ -12,3 +12,4 @@ class Solution:
         if pRoot1.val != pRoot2.val:
             return False
         return self.Mirror(pRoot1.left, pRoot2.right) and self.Mirror(pRoot1.right, pRoot2.left)
+        
