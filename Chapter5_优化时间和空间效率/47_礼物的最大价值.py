@@ -3,6 +3,8 @@
 ## 牛客网没有该题
 class Solution:
     def maxValue(self, array):
+        if not array:
+            return 0
         self.array = array
         self.assist = [[0 for i in range(len(array[0]))] for j in range(len(array))]
         self.step(0, 0)
@@ -17,7 +19,6 @@ class Solution:
         if y > 0:
             left = self.assist[x][y-1]
         self.assist[x][y] = self.array[x][y] + max(up, left)
-        print(self.assist)
         if x+1 < len(self.array):
             self.step(x+1, y)
         if y+1 < len(self.array[0]):
