@@ -8,9 +8,9 @@ class Solution:
         for i in range(bit):
             cb = int(str(n)[i])
             if cb == 1:
-                count += (n % 10 ** i + 1)
+                count += (n % 10 ** (bit-1-i) + 1)
             elif cb >= 2:
-                count += 10 ** i
+                count += 10 ** (bit-1-i)
             if bit-2-i >= 0:
                 count += cb * (bit-1-i) * 10 ** (bit-2-i)
         return count
