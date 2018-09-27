@@ -1,3 +1,4 @@
+## 题目描述：用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。
 ## 用两个栈实现队列，非常巧妙
 class Solution:
     def __init__(self):
@@ -13,7 +14,3 @@ class Solution:
             while self.list1:
                 self.list2.append(self.list1.pop())
         return self.list2.pop()
-
-## 相关题目
-## 用两个队列实现一个栈
-## 待完成

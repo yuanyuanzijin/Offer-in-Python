@@ -9,7 +9,26 @@
 递归地（recursive）把小于基准值元素的子数列和大于基准值元素的子数列排序。
 """
 
-def quick(array):
+## 原地排序
+def quick(array, l, r):
+    if l < r:
+        q = partition(array, l, r)
+        quick(array, l, q-1)
+        quick(array, q+1, r)
+    return array
+
+def partition(array, l, r):
+    i = l-1
+    for j in range(l, r):
+        if array[j] <= array[r]:
+            i += 1
+            array[i], array[j] = array[j], array[i]
+    array[i+1], array[r] = array[r], array[i+1]
+    return i+1
+
+
+## 容易理解，但用到额外空间
+def quick2(array):
     if len(array) <= 1:
         return array
     left = []
@@ -19,8 +38,8 @@ def quick(array):
             left.append(value)
         else:
             right.append(value)
-    return quick(left) + [array[0]] + quick(right)
+    return quick2(left) + [array[0]] + quick2(right)
 
 a = [5, 4, 6, 5, 2, 3, 10, 9, 8, 6]
-print(quick(a))
+print(quick(a, 0, len(a)-1))
 

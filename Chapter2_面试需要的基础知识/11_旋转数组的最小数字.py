@@ -13,11 +13,11 @@ class Solution:
         if rotateArray[0] < rotateArray[-1]:
             return rotateArray[0]
         if rotateArray[0] == rotateArray[-1]:
+            minValue = rotateArray[0]
             for i in range(len(rotateArray)):
-                if rotateArray[i] < rotateArray[0]:
+                if rotateArray[i] < minValue:
                     minValue = rotateArray[i]
-                    return minValue
-            return rotateArray[0]
+            return minValue
         
         p1 = 0
         p2 = len(rotateArray)-1
