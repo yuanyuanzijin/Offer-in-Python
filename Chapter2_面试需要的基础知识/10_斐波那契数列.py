@@ -10,7 +10,7 @@ class Solution:
 
 
 class Solution2:
-    def jumpFloor(self, number):
+    def Fibonacci(self, number):
         # write code here
         a = 0
         b = 1
@@ -18,9 +18,22 @@ class Solution2:
             a, b = b, a + b
         return a
 
+## 使用生成器
+class Solution3:
+    def Fibonacci(self, number):
+        # write code here
+        a = 0
+        b = 1
+        for _ in range(number):
+            a, b = b, a + b
+            yield a
+
+s3 = Solution3()
+for i in s3.Fibonacci(10):
+    print(i)
 
 ## 递归方法，不一定可以完成，效率低
-class Solution3:
+class Solution4:
     def Fibonacci(self, n):
         # write code here
         if n == 0:
