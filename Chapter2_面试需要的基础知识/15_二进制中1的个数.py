@@ -47,6 +47,7 @@ class Solution4:
             num += int(i)
         return num
 
+
 ## 测试用例
 s = Solution3()
 print(s.NumberOf1(-10))
